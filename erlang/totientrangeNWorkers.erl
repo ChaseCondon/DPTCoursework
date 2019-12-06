@@ -78,9 +78,6 @@ server() ->
                 || L <- lists:seq(Lower-1, Upper-1), (L rem (Upper div NWorkers) == 0) or (L == Lower-1)],
       Pids = [ spawn(totientrangeNWorkers, worker, []) || _ <- lists:seq(1, NWorkers)],
 
-      io:format("~p~n", [Ranges]),
-      io:format("~p~n", [Pids]),
-
       [Pid ! {range, L, U} || {Pid, {L, U}} <- lists:zip(Pids, Ranges)],
 
       Totients = [ receive {reply, Pid, Res} -> io:format("Server: Received Sum ~p~n", [Res]), Res end || Pid <- Pids ],
