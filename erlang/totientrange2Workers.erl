@@ -62,7 +62,8 @@ worker() ->
     {range, Lower, Upper} ->
       io:format("Worker: Computing Range ~p ~p~n", [Lower, Upper]),
       Res = lists:sum(lists:map(fun euler/1,lists:seq(Lower, Upper))),
-      server ! {reply, self(), Res};
+      server ! {reply, self(), Res},
+      worker();
     finished ->
       io:format("Worker: Finished~n"),
       exit(normal)
