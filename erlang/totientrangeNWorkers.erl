@@ -74,9 +74,12 @@ server() ->
     {range, Lower, Upper, NWorkers} ->
       {_, S, US} = os:timestamp(),
 
-      Ranges = [{Lower+1, L+(Upper div NWorkers)}
+      Ranges = [{L+1, L+(Upper div NWorkers)}
                 || L <- lists:seq(Lower-1, Upper-1), (L rem (Upper div NWorkers) == 0) or (L == Lower-1)],
       Pids = [ spawn(totientrangeNWorkers, worker, []) || _ <- lists:seq(1, NWorkers)],
+
+      io:format("~p~n", [Ranges]),
+      io:format("~p~n", [Pids]),
 
       [Pid ! {range, L, U} || {Pid, {L, U}} <- lists:zip(Pids, Ranges)],
 
