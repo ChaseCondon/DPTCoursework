@@ -1,0 +1,84 @@
+==============================
+Dataset: 15000
+==============================
+
+Sequential run
+C: Sum of Totients  between [1..15000] is 68394315
+Elapsed time 15.454646s
+
+Num threads: 1
+15.220749s
+Num threads: 2
+7.782046333333334s
+Num threads: 4
+4.010388333333333s
+Num threads: 8
+2.0661413333333334s
+Num threads: 12
+1.3811326666666666s
+Num threads: 16
+1.063452s
+Num threads: 24
+0.7947553333333334s
+Num threads: 32
+0.6463466666666666s
+Num threads: 48
+0.6437303333333333s
+Num threads: 64
+0.6442066666666667s
+==============================
+Dataset: 30000
+==============================
+
+Sequential run
+C: Sum of Totients  between [1..30000] is 273571773
+Elapsed time 65.436309s
+
+Num threads: 1
+65.369055s
+Num threads: 2
+32.62884066666667s
+Num threads: 4
+17.072575333333333s
+Num threads: 8
+8.854436666666667s
+Num threads: 12
+5.902656333333334s
+Num threads: 16
+4.429906666666667s
+Num threads: 24
+3.391373s
+Num threads: 32
+2.748571s
+Num threads: 48
+2.746369s
+Num threads: 64
+2.747683s
+==============================
+Dataset: 60000
+==============================
+
+Sequential run
+C: Sum of Totients  between [1..60000] is 1094277505
+Elapsed time 278.271561s
+
+Num threads: 1
+278.34274966666663s
+Num threads: 2
+139.47200366666667s
+Num threads: 4
+72.756587s
+Num threads: 8
+37.78085766666667s
+Num threads: 12
+25.188376s
+Num threads: 16
+18.89380166666667s
+Num threads: 24
+14.451882666666666s
+Num threads: 32
+11.698912333333334s
+Num threads: 48
+11.697899333333334s
+Num threads: 64
+11.698500666666666s

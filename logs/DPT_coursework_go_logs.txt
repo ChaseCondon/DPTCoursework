@@ -1,0 +1,114 @@
+==============================
+Dataset: 15000
+==============================
+
+Sequential run
+Sum of Totients between 1 and 15000 is 68394315
+Elapsed time 15.87856784
+
+Num threads: 1
+Elapsed time: 16.3222815233s
+
+Num threads: 2
+Elapsed time: 8.1717907233s
+
+Num threads: 4
+Elapsed time: 4.2742330333s
+
+Num threads: 8
+Elapsed time: 2.2165226667s
+
+Num threads: 12
+Elapsed time: 1.4795456267s
+
+Num threads: 16
+Elapsed time: 1.1211625967s
+
+Num threads: 24
+Elapsed time: 0.8731889200s
+
+Num threads: 32
+Elapsed time: 0.7212657067s
+
+Num threads: 48
+Elapsed time: 0.7188419700s
+
+Num threads: 64
+Elapsed time: 0.7191532400s
+
+==============================
+Dataset: 30000
+==============================
+
+Sequential run
+Sum of Totients between 1 and 30000 is 273571773
+Elapsed time 68.112589777
+
+Num threads: 1
+Elapsed time: 69.9471829400s
+
+Num threads: 2
+Elapsed time: 34.9300495567s
+
+Num threads: 4
+Elapsed time: 18.2632170600s
+
+Num threads: 8
+Elapsed time: 9.4671281000s
+
+Num threads: 12
+Elapsed time: 6.3176630307s
+
+Num threads: 16
+Elapsed time: 4.7515223267s
+
+Num threads: 24
+Elapsed time: 3.7153956667s
+
+Num threads: 32
+Elapsed time: 3.0509906433s
+
+Num threads: 48
+Elapsed time: 3.0529939733s
+
+Num threads: 64
+Elapsed time: 3.0517960833s
+
+==============================
+Dataset: 60000
+==============================
+
+Sequential run
+Sum of Totients between 1 and 60000 is 1094277505
+Elapsed time 289.157182674
+
+Num threads: 1
+Elapsed time: 297.4348201467s
+
+Num threads: 2
+Elapsed time: 153.2569007667s
+
+Num threads: 4
+Elapsed time: 78.7133348800s
+
+Num threads: 8
+Elapsed time: 41.1265750033s
+
+Num threads: 12
+Elapsed time: 27.2374247333s
+
+Num threads: 16
+Elapsed time: 20.4429308233s
+
+Num threads: 24
+Elapsed time: 15.9412904133s
+
+Num threads: 32
+Elapsed time: 12.9517029100s
+
+Num threads: 48
+Elapsed time: 13.5114649500s
+
+Num threads: 64
+Elapsed time: 13.0108615000s
+
