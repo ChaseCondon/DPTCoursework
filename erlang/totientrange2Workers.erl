@@ -85,7 +85,8 @@ server() ->
 
       Res = lists:sum(Totients),
       io:format("Server: Sum of totients: ~p~n", [Res]),
-      printElapsed(S,US);
+      printElapsed(S,US),
+      server();
     finished ->
       io:format("Server: Finished~n"),
       exit(normal)
