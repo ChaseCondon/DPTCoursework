@@ -85,9 +85,6 @@ server() ->
 
       Ranges = [get_range(L, Upper, NWorkers)
                 || L <- lists:seq(Lower-1, Upper-1), ((L rem (Upper div NWorkers) == 0) and ((L + (Upper div NWorkers)) =< Upper)) or (L == Lower-1)],
-
-      io:format("~p~n", [Ranges]),
-
       Pids = [ spawn(totientrangeNWorkers, worker, []) || _ <- lists:seq(1, NWorkers)],
 
       [Pid ! {range, L, U} || {Pid, {L, U}} <- lists:zip(Pids, Ranges)],
