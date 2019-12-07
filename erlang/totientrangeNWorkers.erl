@@ -70,7 +70,6 @@ worker() ->
   end.
 
 get_range(Lower, Upper, NWorkers) ->
-  io:format("~p ~p~n", [Lower, Lower+(Upper div NWorkers)*2]),
   if
     Lower+(Upper div NWorkers)*2 > Upper ->
       {Lower, Upper};
