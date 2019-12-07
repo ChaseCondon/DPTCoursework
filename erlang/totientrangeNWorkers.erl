@@ -72,9 +72,9 @@ worker() ->
 get_range(Lower, Upper, NWorkers) ->
   if
     Lower+(Upper div NWorkers)*2 > Upper ->
-      {Lower, Upper};
+      {Lower+1, Upper};
     true ->
-      {Lower, Lower+(Upper div NWorkers)}
+      {Lower+1, Lower+(Upper div NWorkers)}
   end.
 
 server() -> 
