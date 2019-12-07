@@ -69,13 +69,25 @@ worker() ->
       exit(normal)
   end.
 
+get_range(Lower, Upper, NWorkers) ->
+  io:format("~p ~p~n", [Lower, Lower+(Upper div NWorkers)*2]),
+  if
+    Lower+(Upper div NWorkers)*2 > Upper ->
+      {Lower, Upper};
+    true ->
+      {Lower, Lower+(Upper div NWorkers)}
+  end.
+
 server() -> 
   receive
     {range, Lower, Upper, NWorkers} ->
       {_, S, US} = os:timestamp(),
 
-      Ranges = [{L+1, L+(Upper div NWorkers)}
-                || L <- lists:seq(Lower-1, Upper-1), (L rem (Upper div NWorkers) == 0) or (L == Lower-1)],
+      Ranges = [get_range(L, Upper, NWorkers)
+                || L <- lists:seq(Lower-1, Upper-1), ((L rem (Upper div NWorkers) == 0) and ((L + (Upper div NWorkers)) =< Upper)) or (L == Lower-1)],
+
+      io:format("~p~n", [Ranges]),
+
       Pids = [ spawn(totientrangeNWorkers, worker, []) || _ <- lists:seq(1, NWorkers)],
 
       [Pid ! {range, L, U} || {Pid, {L, U}} <- lists:zip(Pids, Ranges)],
